@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db-deplacementmicroservice:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: deplacementmicroservice
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - 5433:5432
+
+  db-affectationmicroservice:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: affectationmicroservice
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+
+  

@@ -1,0 +1,47 @@
+# Fichiers et répertoires générés par les systèmes d'exploitation
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration
+*.log
+.env
+
+# Fichiers de dépendances et de build
+node_modules/
+bower_components/
+*.lock
+*.swp
+
+# Fichiers d'éditeurs de texte
+*.sublime-project
+*.sublime-workspace
+.vscode/
+*.idea/
+
+# Fichiers de sauvegarde
+*~
+*.bak
+*.backup
+
+# Fichiers de compilation
+*.class
+*.war
+*.jar
+
+# Fichiers de sortie d'applications
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Fichiers de données sensibles
+*.pem
+*.key
+
+# Fichiers de configuration spécifiques à certains outils
+.idea/
+.vscode/
+.gradle/
+
+
+**/logs/
