@@ -10,7 +10,7 @@ docker-compose up
 
 # Lancement des microservices et du reverse-proxy
 
-Lancez les launchers java des microservices. Attention veillez à bien **lancer le microservice déplacement avant le microservice affectation** car ce dernier démarre en faisant des requête au microservice déplacement.
+Lancez les launchers java des microservices. Attention veillez à bien **lancer le microservice déplacement avant le microservice affectation** car ce dernier démarre en faisant des requêtes au microservice déplacement.
 
 # Accès à l'application
 
