@@ -1,0 +1,47 @@
+*, *::after, *::before{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+
+:root{
+    font-size: 62.5%;
+    --navHeight: 8rem;
+    --primary-color: #4361ee;
+    --text-color: #343a40;
+    --cancel-color: #dc2f02;
+    --ok-color: rgba(153, 217, 140, 1);
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: Poppins, sans-serif;
+    color: var(--text-color);
+}
+
+
+a:link, a:visited, a:focus{
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+button{
+    font-size: inherit;
+    padding: 1em;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: white;
+}
+
+input, select{
+    padding: .5rem;
+    border: 1px solid rgb(118,118,118);
+}
+
+label{
+    font-weight: 500;;
+}

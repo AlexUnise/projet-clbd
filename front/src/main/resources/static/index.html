@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Fire Simulator</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- LEAFLET CSS -->
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/L.Control.SplendidLayer.css">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/config.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+    <nav class="nav">
+        <ul>
+            <li><img src="img/fire-station.svg"><h1>Fire Simulator</h1></li>
+            <li><button class="nav-button" data-modal-open="#modal-vehicleCreate"> &#10010; Créer un véhicule</button></li>
+          </ul>
+    </nav>
+
+
+    <div class="modal" id="modal-vehicleCreate">
+      <button class="modal-close-button" data-modal-close>&#10005;</button>
+      <form class="form" action="" id="vehicleCreateForm">
+
+        <h2 class="form-title">Créer un véhicule</h2>
+
+        <div class="form-item-container">
+
+          <div class="form-item">
+            <div class="ok-message-container" id="create-ok-message-container">
+              <p id="create-ok-message">Error message</p>
+            </div>
+            <div class="error-message-container" id="create-error-message-container">
+              <p id="create-error-message">Error message</p>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <label for="create-vehicle-crew-members">Nombre de pompiers</label>
+            <input type="number" name="create-vehicle-crew-members" id="create-vehicle-crew-members" min="1" value="1">
+          </div>
+
+          <div class="form-item">
+            <label for="create-vehicle-facility">Caserne</label>
+            <select name="create-vehicle-facility" id="create-vehicle-facility">
+              <option value="36">36</option>
+              <option value="3923">3923</option>
+            </select>
+          </div>
+          
+          <div class="form-item">
+            <label for="create-vehicle-type">Type de véhicule</label>
+            <select name="create-vehicle-type" id="create-vehicle-type">
+              <option value="CAR">CAR</option>
+              <option value="FIRE_ENGINE">FIRE_ENGINE</option>
+              <option value="PUMPER_TRUCK">PUMPER_TRUCK</option>
+              <option value="WATER_TENDER">WATER_TENDER</option>
+              <option value="TURNABLE_LADDER_TRUCK">TURNABLE_LADDER_TRUCK</option>
+              <option value="TRUCK">TRUCK</option>
+            </select>
+          </div>
+          
+          <div class="form-item">
+            <label for="create-vehicle-liquid-type">Type de liquide</label>
+            <select name="create-vehicle-liquid-type" id="create-vehicle-liquid-type">
+              <option value="ALL">ALL</option>
+              <option value="WATER">WATER</option>
+              <option value="POWDER">POWDER</option>
+              <option value="SPECIAL_POWDER">SPECIAL_POWDER</option>
+              <option value="CARBON_DIOXIDE">CARBON_DIOXIDE</option>
+              <option value="FOAM">FOAM</option>
+            </select>
+          </div>
+
+          
+        
+        </div>
+        <button class="form-button">Créer un véhicule</button>
+      </form>
+
+    </div>
+
+    <div class="modal" id="modal-vehicleUpdate">
+      <button class="modal-close-button" data-modal-close>&#10005;</button>
+      <form class="form" action="" id="vehicleUpdateForm">
+
+        <h2 class="form-title">Modifier un véhicule</h2>
+
+        <div class="form-item-container">
+
+          <div class="form-item">
+            <p>Véhicule à modifier: <span id="update-vehicle-to-be-updated"></span></p>
+          </div>
+
+          <div class="form-item">
+            <div class="ok-message-container" id="update-ok-message-container">
+              <p id="update-error-message">Error message</p>
+            </div>
+            <div class="error-message-container" id="update-error-message-container">
+              <p id="update-error-message">Error message</p>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <label for="update-vehicle-crew-members">Nombre de pompiers</label>
+            <input type="number" name="update-vehicle-crew-members" id="update-vehicle-crew-members" min="1" value="1">
+          </div>
+          
+          <div class="form-item">
+            <label for="update-vehicle-type">Type de véhicule</label>
+            <select name="update-vehicle-type" id="update-vehicle-type">
+              <option value="CAR">CAR</option>
+              <option value="FIRE_ENGINE">FIRE_ENGINE</option>
+              <option value="PUMPER_TRUCK">PUMPER_TRUCK</option>
+              <option value="WATER_TENDERS">WATER_TENDERS</option>
+              <option value="TURNTABLE_LADDER_TRUCK">TURNTABLE_LADDER_TRUCK</option>
+              <option value="TRUCK">TRUCK</option>
+            </select>
+          </div>
+
+          <div class="form-item">
+            <label for="update-vehicle-liquid-type">Type de liquide</label>
+            <select name="update-vehicle-liquid-type" id="update-vehicle-liquid-type">
+              <option value="ALL">ALL</option>
+              <option value="WATER">WATER</option>
+              <option value="POWDER">POWDER</option>
+              <option value="SPECIAL_POWDER">SPECIAL_POWDER</option>
+              <option value="CARBON_DIOXIDE">CARBON_DIOXIDE</option>
+              <option value="FOAM">FOAM</option>
+            </select>
+          </div>
+
+        </div>
+        <button class="form-button">Modifier le véhicule</button>
+      </form>
+    </div>
+
+    <div class="modal" id="modal-vehicleDelete">
+      <button class="modal-close-button" data-modal-close>&#10005;</button>
+      <form class="form" action="" id="vehicleDeleteForm">
+
+        <h2 class="form-title">Supprimer un véhicule</h2>
+
+        <div class="form-item-container">
+
+          <div class="form-item">
+            <label for="delete-vehicle-id">Id</label>
+            <input type="number" name="delete-vehicle-id" id="delete-vehicle-id" min="1" value="1">
+          </div>
+
+
+        </div>
+        <button class="form-button">Supprimer le véhicule</button>
+      </form>
+  </div>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <div id="map"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- LEAFLET JS -->
+    <script src="js/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw"></script>
+    
+    <!-- CUSTOM JS -->
+    <script src="js/markerCreation.js"></script>
+    <script src="js/getMarkers.js"></script>
+    <script src="js/drawLayer.js"></script>
+    <script src="js/L.Control.SplendidLayer.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/mapCreation.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
