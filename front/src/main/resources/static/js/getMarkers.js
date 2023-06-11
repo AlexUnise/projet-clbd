@@ -1,6 +1,6 @@
 
 /**
- * @author Alexndre Ouenadio
+ * @author Alexandre Ouenadio
  * @param {L.Map} map 
  * @description Generate an Object of classified fireMarkers by type.
  * @returns  fireMarkers Object with each key corresponding to a fireType | null 
@@ -46,7 +46,7 @@ async function getFireMarkers(map){
 
 
 /**
- * @author Alexndre Ouenadio
+ * @author Alexandre Ouenadio
  * @param {L.Map} map 
  * @description Generate an Array of facilityMarker Objects.
  * @returns  facilityMarkers Array with each element corresponding to a facilityMarker | null 
@@ -76,7 +76,7 @@ async function getFacilityMarkers(map){
 }
 
 /**
- * @author Alexndre Ouenadio
+ * @author Alexandre Ouenadio
  * @param {L.Map} map 
  * @description Generate an Object of classified vehicleMarkers by type.
  * @returns  vehicleMarkers Object with each key corresponding to a vehicleType | null 
